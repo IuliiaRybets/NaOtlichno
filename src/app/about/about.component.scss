@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+.banner {
+   background-image: url('../../assets/img/aboutUs.png'), linear-gradient(332deg, $el-antrazit 17%, #343a40 100%);
+   // background-color: linear-gradient(332deg, $el-antrazit 17%, #343a40 100%);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+    color: $el-ui-grey-1;
+    height: 60vh;
+}
+
+.column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: $breakpoint-medium) {
+  
+  }
+  
+  @media (max-width: $breakpoint-small) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+

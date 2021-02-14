@@ -1,0 +1,82 @@
+@import 'colors';
+@import 'breakpoints';
+
+.bg-red {
+  color: $el-sand;
+  background-color: $el-red-1;
+}
+
+.bg-orange {
+  color: $el-sand;
+  background-color: $el-orange-light;
+}
+
+.page {
+  background-color: $el-sand;
+}
+
+.button {
+  border-radius: 0.25rem;
+  border: 2px solid $el-ui-grey-1;
+  color: $el-ui-grey-1;
+  font-family: MarselisPro-Bold, Verdana, Arial, sans-serif;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+}
+
+.middle-text {
+  font-size: 0.8rem;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  color: $el-ui-grey-4;
+}
+
+.footer {
+  color: $el-ui-grey-3;
+
+  a {
+    color: $el-ui-grey-4;
+    &:hover{
+      color: $el-ui-grey-3;
+    }
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-large) {
+
+  h1 {
+    font-size: 3.5vw;
+  }
+
+  .small-text {
+    font-size: 1.2vw;
+  }
+  
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+
+  h1 {
+    font-size: 4.5vw;
+  }
+
+  .small-text {
+    font-size: 2.5vw;
+  }
+  
+}
+
+@media screen and (max-width: $breakpoint-small) {
+ 
+  h1 {
+    font-size: 6.5vw;
+  }
+  
+  .small-text {
+    font-size: 3vw;
+  }
+}
