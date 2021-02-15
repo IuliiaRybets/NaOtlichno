@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+
+.banner {
+   background-image: url('../../assets/img/contact.png'), linear-gradient(332deg, $el-antrazit 17%, #343a40 100%);
+   // background-color: linear-gradient(332deg, $el-antrazit 17%, #343a40 100%);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: bottom;
+    color: $el-ui-grey-1;
+    height: 40vh;
+}

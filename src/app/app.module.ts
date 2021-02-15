@@ -5,26 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
-import { AboutComponent } from './about/about.component';
 import { AboutModule } from './about/about.module';
-import { ContactComponent } from './contact/contact.component';
-import { PriceComponent } from './price/price.component';
-import { PayComponent } from './pay/pay.component';
+import { ContactModule } from './contact/contact.module';
+import { PayModule } from './pay/pay.module';
+import { PriceModule } from './price/price.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContactComponent,
-    PriceComponent,
-    PayComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     SharedModule,
-    AboutModule
+    AboutModule,
+    ContactModule,
+    PriceModule,
+    PayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

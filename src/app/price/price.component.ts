@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TextProject } from '../shared/text';
 
 @Component({
   selector: 'app-price',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceComponent implements OnInit {
 
+  text = TextProject;
   constructor() { }
 
   ngOnInit(): void {

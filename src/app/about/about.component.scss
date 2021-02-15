@@ -10,25 +10,12 @@
     height: 60vh;
 }
 
-.column {
-    flex: 50%;
-    max-width: 50%;
-    padding: 0 4px;
-  }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-  }
 
   @media (max-width: $breakpoint-medium) {
   
   }
   
   @media (max-width: $breakpoint-small) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
+
   }
 

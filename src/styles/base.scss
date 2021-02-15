@@ -25,8 +25,28 @@
   background-color: transparent;
 }
 
+.button-orange {
+  border-radius: 0.25rem;
+  border: 2px solid $el-orange-light;
+  color:  $el-ui-grey-1;
+  font-family: MarselisPro-Bold, Verdana, Arial, sans-serif;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
+  background-color: $el-orange-light;
+
+  &:hover {
+    background-color: $el-sand;
+    border: 2px solid $el-antrazit;
+    color:  $el-antrazit;
+  }
+}
+
 .middle-text {
   font-size: 0.8rem;
+}
+
+.red-text {
+  color: $el-red-1;
 }
 
 .small-text {

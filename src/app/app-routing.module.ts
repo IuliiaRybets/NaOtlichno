@@ -10,10 +10,18 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
- /* {
+  {
     path: 'contact',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-  }*/
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+  },
+  {
+    path: 'pay',
+    loadChildren: () => import('./pay/pay.module').then(m => m.PayModule)
+  },
+  {
+    path: 'price',
+    loadChildren: () => import('./price/price.module').then(m => m.PriceModule)
+  }
 ];
 
 @NgModule({
