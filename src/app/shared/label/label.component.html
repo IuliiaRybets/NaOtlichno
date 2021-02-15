@@ -1,1 +1,7 @@
 <label [innerHTML]="labelName" ></label>
+<ng-content></ng-content>
+
+<div *ngIf="showError"
+    class="text-danger font-weight-bold font-italic">
+    <p [innerHTML]="errorText"></p>
+</div>

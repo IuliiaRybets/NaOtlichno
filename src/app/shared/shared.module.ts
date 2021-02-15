@@ -3,10 +3,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LabelComponent } from './label/label.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
-        NgbModule
+        CommonModule,
+        NgbModule,
+        FormsModule
     ],
     declarations: [
         HeaderComponent,
@@ -16,7 +20,9 @@ import { LabelComponent } from './label/label.component';
     exports: [
         HeaderComponent,
         FooterComponent,
-        LabelComponent
+        LabelComponent,
+        FormsModule,
+        ReactiveFormsModule
     ],
 
 })

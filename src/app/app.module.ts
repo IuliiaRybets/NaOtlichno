@@ -9,6 +9,7 @@ import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { PayModule } from './pay/pay.module';
 import { PriceModule } from './price/price.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,8 @@ import { PriceModule } from './price/price.module';
     AppComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HomeModule,
