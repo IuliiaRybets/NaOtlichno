@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TextProject } from '../text';
+
 
 @Component({
   selector: 'app-label',
@@ -10,10 +13,15 @@ export class LabelComponent implements OnInit {
   @Input() labelName: string;
   @Input() showError = false;
   @Input() errorText?: string;
-
-  constructor() { }
+  @Input() infoText?: any;
+ 
+  
+  constructor(private _modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
+  selectInfoBtn(info: any){
+    this._modalService.open(info);
+  }
 }

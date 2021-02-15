@@ -41,7 +41,7 @@
       <div class="form-group">
         <app-label [labelName]="text.label.topic"
         [errorText]="error.text.topic">
-        <input type="email" class="form-control" placeholder="Тема рыботы">
+        <input type="email" class="form-control" placeholder="Тема работы">
     </app-label>
       </div>
       <div class="form-group">
@@ -53,8 +53,8 @@
     <div class="form-group">
         <app-label [labelName]="text.label.subject"
         [errorText]="error.text.subject"
-        [showError]="subject.touched && subject.invalid">
-      
+        [showError]="subject.touched && subject.invalid"
+        [infoText]="text.info">
       <select class="form-control form" formControlName="subject" >
         <option value="" disabled style="display: none;">Пожалуйста выберите предмет</option>
         <option *ngFor="let s of subjectName"> {{ s }}</option>
@@ -64,8 +64,7 @@
     </div>
     <div class="form-group">
         <app-label [labelName]="text.label.deadline"
-                    [errorText]="error.text.deadline"
-                >
+                    [errorText]="error.text.deadline">
             <input type="email" class="form-control" placeholder="20 стр до 10.10.21">
         </app-label>
       </div>

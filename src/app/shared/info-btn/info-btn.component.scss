@@ -1,0 +1,38 @@
+@import '../../../styles/colors';
+
+.info-button {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 50%;
+  border: 2px solid $el-antrazit;
+  font-family: MarselisPro-Bold, Verdana, Arial, sans-serif;
+  text-align: center;
+  padding-top: 1px;
+  line-height: 19px;
+
+  &:before {
+    content: 'i';
+  }
+
+  &:hover {
+    background-color: $el-antrazit;
+    color: white;
+  }
+
+  &.active {
+    z-index: 3;
+    background-color: white;
+
+    &:hover {
+      color: $el-antrazit;
+    }
+
+    &:before {
+      content: "X";
+    }
+  }
+
+}

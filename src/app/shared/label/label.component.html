@@ -1,7 +1,25 @@
-<label [innerHTML]="labelName" ></label>
-<ng-content></ng-content>
 
-<div *ngIf="showError"
-    class="text-danger font-weight-bold font-italic">
-    <p [innerHTML]="errorText"></p>
-</div>
+    <div class="d-flex justify-content-between" >
+        <label [innerHTML]="labelName" ></label>
+        <app-info-btn *ngIf="infoText" [text]="infoText" (infoButtonSelect)=selectInfoBtn(content)></app-info-btn>
+    
+    </div>
+    <ng-content></ng-content>
+   
+    <div *ngIf="showError"
+        class="text-danger font-weight-bold font-italic">
+        <p [innerHTML]="errorText"></p>
+    </div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{ infoText.title }}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{ infoText.subjectInfo }}
+    </div>
+  </ng-template>

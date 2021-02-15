@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   text = TextProject;
   subjectName: any[];
 
+  selectedRecepie = TextProject.info.subjectInfo;
   orderForm: FormGroup;
   subject = new FormControl();
 
