@@ -3,7 +3,8 @@
         <h1 class="logo-font text-uppercase text-center">Студенческие работы на заказ</h1>
         <div class="d-flex justify-content-center align-items-end h-75">
             <button class="button"
-            [innerText]="text.button.title">
+            [innerText]="text.button.title"
+            (click)="contactClick()">
             </button>
         </div>
     </div>
@@ -75,19 +76,20 @@
 </div>
 <div class="container-fluid">
         <div class="row">
-            <div class="bg-red py-4 col-md-6 col-sm-12">
-                <div class="container py-4">
+            <div class="bg-red p-4 col-md-6 col-sm-12">
+                <div class="container p-4">
                     <p>свяжись с нами</p>
                     <h3>Тебе нужен проект?</h3>
                     <div class="my-4">
                         <button class="button"
-                        [innerText]="text.button.title">
+                        [innerText]="text.button.title"
+                        (click)="contactClick()">
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="bg-orange py-4 col-md-6 col-sm-12">
-                <div class="container py-4">
+            <div class="bg-orange p-4 col-md-6 col-sm-12">
+                <div class="container p-4">
                     <p>оставайся на связи</p>
                     <h3>Ты хочешь с нами работать?</h3>
                     <div class="my-4">

@@ -6,12 +6,15 @@ import { LabelComponent } from './label/label.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfoBtnComponent } from './info-btn/info-btn.component';
+import { RouterModule } from '@angular/router';
+import { RedirectGuard } from '../service/redirectGuard.service';
 
 @NgModule({
     imports: [
         CommonModule,
         NgbModule,
-        FormsModule
+        FormsModule,
+        RouterModule
     ],
     declarations: [
         HeaderComponent,
@@ -25,9 +28,10 @@ import { InfoBtnComponent } from './info-btn/info-btn.component';
         LabelComponent,
         FormsModule,
         ReactiveFormsModule,
-        InfoBtnComponent
+        InfoBtnComponent,
+        RouterModule,
     ],
-
+    providers: [RedirectGuard],
 })
 
 export class SharedModule {}

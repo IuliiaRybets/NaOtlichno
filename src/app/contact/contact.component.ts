@@ -14,18 +14,21 @@ export class ContactComponent implements OnInit {
   text = TextProject;
   subjectName: any[];
 
-  selectedRecepie = TextProject.info.subjectInfo;
+
   orderForm: FormGroup;
   subject = new FormControl();
 
   
-  constructor(private readonly fb: FormBuilder) { }
+  constructor(private readonly fb: FormBuilder) {
+    this.subjectName = SUBJECTNAME;
+    this.subjectName.sort();
+     }
 
   ngOnInit(): void {
     this.orderForm = this.fb.group({
       subject: ['', Validators.required],
      });
-    this.subjectName = SUBJECTNAME;
+    
   }
 
   changeSubject(sub: any) {

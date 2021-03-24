@@ -28,7 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PriceModule,
     PayModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

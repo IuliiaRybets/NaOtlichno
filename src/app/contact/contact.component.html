@@ -1,12 +1,12 @@
 <div class="banner">
     <div class="container p-5 h-100">
-        <h1 class="logo-font text-uppercase text-center">Связаться с нами</h1>
+        <h1 class="logo-font text-uppercase text-center my-4">Связаться с нами</h1>
         <div class="d-flex flex-column align-items-center h-75">
-            <div class="d-flex flex-row m-4">
+            <div class="d-flex flex-row m-2">
                 <img width="40" height="auto" src="../../assets/phone-call.png">
                 <h4 class="mx-2">097-716-21-57</h4>
             </div>
-            <div  class="d-flex flex-row m-4">
+            <div  class="d-flex flex-row m-2">
                 <img width="40" height="auto" src="../../assets/email.png">
                 <h4 class="mx-2">naotlichno.com.ua@gmail.com</h4>
             </div>
@@ -34,19 +34,19 @@
       </div>
       <div class="form-group">
         <app-label [labelName]="text.label.tel"
-        [errorText]="error.text.tel" >
+                    [errorText]="error.text.tel" >
         <input type="tel" class="form-control" placeholder="05012434567">
     </app-label>
       </div>
       <div class="form-group">
         <app-label [labelName]="text.label.topic"
-        [errorText]="error.text.topic">
+                    [errorText]="error.text.topic">
         <input type="email" class="form-control" placeholder="Тема работы">
     </app-label>
       </div>
       <div class="form-group">
         <app-label [labelName]="text.label.type"
-        [errorText]="error.text.type">
+                    [errorText]="error.text.type">
         <input type="email" class="form-control" placeholder="Тип работы">
     </app-label>
       </div>
@@ -70,10 +70,12 @@
       </div>
     <div class="form-group">
         <app-label [labelName]="text.label.message"
-            [errorText]="error.text.message">
+                    [errorText]="error.text.message">
         <textarea class="form-control" rows="3"></textarea>
     </app-label>
     </div>
-    <button type="submit" [innerHTML]="text.button.title" class="button-orange mb-2"></button>
+    <button type="submit" [innerHTML]="text.button.title" class="button-orange mb-2">
+        
+    </button>
   </form>
 </div>

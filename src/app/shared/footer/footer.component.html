@@ -1,7 +1,8 @@
 <footer class="bg-dark">
     <div class="container">
         <div class="row footer py-4">
-            <div class="col-md-3 col-xs-12">LOGO</div>
+            <div class="col-md-3 col-xs-12"><a class="navbar-brand" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
+            </div>
             <div class="col-md-3 col-xs-12">
                 <h6>Office</h6>
                 <p class="py-2 small-text">
@@ -16,16 +17,16 @@
             <div class="col-md-3 col-xs-12">
                 <h6>Links</h6>
                   <p class="small-text">
-                    <a class="" href="#">О Нас</a>
+                    <a class="" [routerLink]="['/about']">О Нас</a>
                   </p>
                   <p class="small-text">
-                    <a class="" href="#">Контакт</a>
+                    <a class="" [routerLink]="['/contact']">Контакт</a>
                   </p>
                   <p class="small-text">
-                      <a class="" href="#">Прайс лист</a>
+                      <a class="" [routerLink]="['/price']">Прайс лист</a>
                   </p>
                   <p class="small-text">
-                      <a class="" href="#">Оплата</a>
+                      <a class="" [routerLink]="['pay']">Оплата</a>
                   </p>
             </div>
             <div class="col-md-3 col-xs-12">

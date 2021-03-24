@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
         <div class="container">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
         
         <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
             <span class="navbar-toggler-icon"></span>
@@ -9,19 +9,19 @@
         <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" >Главная <span class="sr-only">(current)</span></a>
+              <a class="nav-link" [routerLink]="['']">Главная <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">О Нас</a>
+              <a class="nav-link" [routerLink]="['/about']">О Нас</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Контакт</a>
+              <a class="nav-link" [routerLink]="['/contact']">Контакт</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Прайс лист</a>
+                <a class="nav-link" [routerLink]="['/price']">Прайс лист</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Оплата</a>
+                <a class="nav-link" [routerLink]="['/pay']">Оплата</a>
             </li>
           </ul>
           <div class="my-2 my-lg-0">
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">
+                    <a class="nav-link disabled" >
                         <img src="assets/instagram-red.png" class="social-icons" width="20" height="20">
                     </a>
                 </li>
