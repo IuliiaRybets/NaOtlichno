@@ -1,0 +1,8 @@
+.footer div:first-child {
+  text-align: left!important;
+}
+@media screen and (max-width: 768px) {
+  .footer div:first-child {
+    text-align: center!important;
+  }
+}

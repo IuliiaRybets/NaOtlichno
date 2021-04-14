@@ -6,8 +6,9 @@ import { LabelComponent } from './label/label.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfoBtnComponent } from './info-btn/info-btn.component';
-import { RouterModule } from '@angular/router';
+import {ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot} from '@angular/router';
 import { RedirectGuard } from '../service/redirectGuard.service';
+import {ContactService} from '../service/contact.service';
 
 @NgModule({
     imports: [
@@ -31,7 +32,9 @@ import { RedirectGuard } from '../service/redirectGuard.service';
         InfoBtnComponent,
         RouterModule,
     ],
-    providers: [RedirectGuard],
+  providers: [RedirectGuard,
+    ContactService
+  ],
 })
 
 export class SharedModule {}

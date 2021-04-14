@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RedirectGuard } from './service/redirectGuard.service';
+import { HeaderComponent } from './shared/header/header.component';
 
 const routes: Routes = [
   {
@@ -24,11 +25,11 @@ const routes: Routes = [
     loadChildren: () => import('./price/price.module').then(m => m.PriceModule)
   },
   {
-    path: 'instagramm',
-    canActivate: [RedirectGuard],
-    component: RedirectGuard,
-    data: {
-        externalUrl: 'https://www.instagram.com/naotlichno.com.ua/'
+    path: 'external',
+    canActivate: [ RedirectGuard ],
+    component: HeaderComponent,
+    resolve: {
+      url: 'external'
     }
   }
 ];

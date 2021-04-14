@@ -1,7 +1,7 @@
 <footer class="bg-dark">
     <div class="container">
-        <div class="row footer py-4">
-            <div class="col-md-3 col-xs-12"><a class="navbar-brand" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
+        <div class="row footer text-center py-4">
+            <div class="col-md-3 col-xs-12"><a class="navbar-brand pb-4" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
             </div>
             <div class="col-md-3 col-xs-12">
                 <h6>Office</h6>
@@ -34,7 +34,7 @@
                 <a class="col" href="#">
                     <img src="assets/telegram-footer.png" class="social-icons" width="20" height="20">
                 </a>
-                <a class="col" href="#">
+                <a class="col"href="https://www.instagram.com/naotlichno.com.ua/" (click)="router.navigateByUrl('/external?url=https://www.instagram.com/naotlichno.com.ua/');false">
                     <img src="assets/instagram-footer.png" class="social-icons" width="20" height="20">
                 </a>
                 <a class="col" href="#">
@@ -43,10 +43,10 @@
             </div>
 
         </div>
-    </div>    
+    </div>
     <div class="container">
         <small class="footer text-center">
-            Все права защищены 
+            Все права защищены
             {{ nowFormatted }}
         </small>
     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RedirectGuard} from '../../service/redirectGuard.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   isCollapsed: boolean;
 
-  constructor() { }
+  constructor(private redirect: RedirectGuard, readonly router: Router ) { }
 
   ngOnInit(): void {
     this.isCollapsed = true;

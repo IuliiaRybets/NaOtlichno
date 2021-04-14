@@ -10,3 +10,7 @@
     color: $el-ui-grey-1;
     height: 60vh;
 }
+
+.form-control::placeholder {
+  color: #d8d8d8;
+}

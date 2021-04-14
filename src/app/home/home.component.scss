@@ -9,3 +9,13 @@
     color: $el-ui-grey-1;
     height: 60vh;
 }
+
+.align-self {
+  align-self: center;
+}
+.bg-red {
+  background: linear-gradient(
+      80deg
+    , #E60000 50%, #FFA500 0%);
+}
+

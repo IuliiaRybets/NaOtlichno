@@ -17,65 +17,89 @@
     <div class="text-center">
         <img width="50" height="auto" src="../../assets/box.png">
         <h5 class="py-4">Заказать работу</h5>
-    </div>  
-<form [formGroup]="orderForm">
+    </div>
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" >
     <div class="form-group">
       <app-label [labelName]="text.label.name"
-                 [errorText]="error.text.name" >
-      <input type="email" class="form-control" placeholder="Ваше имя">
-    </app-label>
+                 [errorText]="error.text.name"
+                 [showError]="orderForm.controls.name.invalid && orderForm.controls.name.touched"
+      >
+        <input type="text"
+               formControlName="name"
+               class="form-control"
+               placeholder="Ваше имя"
+                required>
+      </app-label>
     </div>
     <div class="form-group">
         <app-label [labelName]="text.label.email"
-                    [errorText]="error.text.email">
-        <input type="email" class="form-control" placeholder="name@example.com">
-
-                </app-label>
-      </div>
-      <div class="form-group">
+                    [errorText]="error.text.email"
+                   [showError]="orderForm.controls.email.invalid && orderForm.controls.email.touched"
+        >
+          <input type="email"
+                 formControlName="email"
+                 class="form-control"
+                 placeholder="name@example.com"
+                >
+        </app-label>
+    </div>
+    <div class="form-group">
         <app-label [labelName]="text.label.tel"
-                    [errorText]="error.text.tel" >
-        <input type="tel" class="form-control" placeholder="05012434567">
-    </app-label>
-      </div>
+                    [errorText]="error.text.tel"
+                   [showError]="orderForm.controls.tel.invalid && orderForm.controls.tel.touched"
+        >
+        <input type="tel"
+               onkeypress='return event.charCode <= 57'
+               formControlName="tel"
+               class="form-control"
+               placeholder="05012434567"
+               required>
+        </app-label>
+    </div>
       <div class="form-group">
         <app-label [labelName]="text.label.topic"
-                    [errorText]="error.text.topic">
-        <input type="email" class="form-control" placeholder="Тема работы">
-    </app-label>
+                    [errorText]="error.text.topic"
+                   [showError]="orderForm.controls.topic.invalid && orderForm.controls.topic.touched"
+        >
+        <input type="text" formControlName="topic" class="form-control" placeholder="Тема работы">
+        </app-label>
       </div>
       <div class="form-group">
         <app-label [labelName]="text.label.type"
-                    [errorText]="error.text.type">
-        <input type="email" class="form-control" placeholder="Тип работы">
-    </app-label>
+                    [errorText]="error.text.type"
+                   [showError]="orderForm.controls.type.invalid && orderForm.controls.type.touched"
+        >
+        <input type="text" formControlName="type" class="form-control" placeholder="Тип работы">
+        </app-label>
       </div>
     <div class="form-group">
-        <app-label [labelName]="text.label.subject"
+      <app-label [labelName]="text.label.subject"
         [errorText]="error.text.subject"
-        [showError]="subject.touched && subject.invalid"
+        [showError]="orderForm.controls.subject.invalid && orderForm.controls.subject.touched"
         [infoText]="text.info">
-      <select class="form-control form" formControlName="subject" >
-        <option value="" disabled style="display: none;">Пожалуйста выберите предмет</option>
-        <option *ngFor="let s of subjectName"> {{ s }}</option>
-      </select>
-      {{subject.invalid}}
-    </app-label>
+        <select class="form-control form" formControlName="subject" >
+          <option value="" disabled style="display: none;">Пожалуйста выберите предмет</option>
+          <option *ngFor="let s of subjectName"> {{ s }}</option>
+        </select>
+      </app-label>
     </div>
     <div class="form-group">
         <app-label [labelName]="text.label.deadline"
-                    [errorText]="error.text.deadline">
-            <input type="email" class="form-control" placeholder="20 стр до 10.10.21">
+                    [errorText]="error.text.deadline"
+                   [showError]="orderForm.controls.deadline.invalid && orderForm.controls.deadline.touched"
+        >
+            <input type="text" formControlName="deadline" class="form-control" placeholder="20 стр до 10.10.21">
         </app-label>
       </div>
     <div class="form-group">
         <app-label [labelName]="text.label.message"
-                    [errorText]="error.text.message">
-        <textarea class="form-control" rows="3"></textarea>
-    </app-label>
+        >
+            <textarea class="form-control" formControlName="message" rows="3"></textarea>
+        </app-label>
     </div>
-    <button type="submit" [innerHTML]="text.button.title" class="button-orange mb-2">
-        
+    <button type="submit" [innerHTML]="text.button.title"
+                          [disabled]="!orderForm.valid"
+            class="button-orange mb-2">
     </button>
   </form>
 </div>

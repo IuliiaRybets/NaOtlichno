@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'naotlichno';
 
-  onActivate(event) {
-    window.scroll(0,0);
+  onActivate(event): void {
+    window.scroll(0, 0);
   }
 
 }
