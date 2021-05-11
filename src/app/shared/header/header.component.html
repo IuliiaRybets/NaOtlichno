@@ -1,48 +1,29 @@
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
         <div class="container">
-        <a class="navbar-brand" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
+        <a class="navbar-brand" [routerLink]="['/home']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
 
         <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div [ngbCollapse]="isCollapsed" class="collapse text-center navbar-collapse">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" [routerLink]="['']">Главная <span class="sr-only">(current)</span></a>
+        <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse text-center" (click)="isCollapsed = true">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/home']">Главная <span *ngIf="isActiveLink('/home')" class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/about']">О Нас</a>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/about']">О Нас <span *ngIf="isActiveLink('/about')" class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/contact']">Контакт</a>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/contact']">Контакт <span *ngIf="isActiveLink('/about')" class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/price']">Прайс лист</a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/price']">Прайс лист <span *ngIf="isActiveLink('/about')" class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/pay']">Оплата</a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/pay']">Оплата <span *ngIf="isActiveLink('/about')" class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <div class="my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="assets/telegram-red.png" class="social-icons" width="20" height="20">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/naotlichno.com.ua/" (click)="router.navigateByUrl('/external?url=https://www.instagram.com/naotlichno.com.ua/');false">
-                        <img src="assets/instagram-red.png" class="social-icons" width="20" height="20">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="assets/whatsapp-red.png" class="social-icons" width="20" height="20">
-                    </a>
-                </li>
-            </ul>
-          </div>
         </div>
     </div>
 </nav>

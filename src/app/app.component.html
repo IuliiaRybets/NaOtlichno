@@ -1,6 +1,10 @@
 
-  <app-header></app-header>
+  <app-header ></app-header>
 
   <router-outlet (activate)="onActivate($event)"></router-outlet>
-  
+
+  <app-networks></app-networks>
+  <div *ngIf="service.displayChat | async" >
+    <app-telegram appClickOutside></app-telegram>
+  </div>
   <app-footer></app-footer>

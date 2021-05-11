@@ -1,0 +1,35 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+
+.fixed-left {
+  top: 30%;
+  right: 0;
+  align-items: flex-end;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.navbar-nav .networks {
+  background: $el-antrazit;
+  padding: 0.6rem;
+  display: block;
+  width: 40px;
+
+  &:first-child {
+    border-top-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+  }
+
+  &:hover {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    width: 60px;
+  }
+}

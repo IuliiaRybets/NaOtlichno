@@ -1,6 +1,8 @@
 import { formatDate } from '@angular/common';
-import { Component, OnInit, Pipe } from '@angular/core';
+import {Component, OnDestroy, OnInit, Output, Pipe} from '@angular/core';
 import {Route, Router} from '@angular/router';
+import {ContactService} from '../../service/contact.service';
+import {Subject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -8,16 +10,21 @@ import {Route, Router} from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 
-export class FooterComponent implements OnInit {
-
+export class FooterComponent {
   now = new Date();
   nowFormatted: string;
 
-  constructor(readonly router: Router) {
+  constructor(readonly router: Router, private readonly serviceContact: ContactService) {
     this.nowFormatted = formatDate(this.now, 'yyyy', 'en-US');
   }
 
-  ngOnInit(): void {
+  onTelegram(evt: Event): void {
+    evt.cancelBubble = true;
+
+    this.serviceContact.toggleChat();
   }
 
+  sendEmail(): void {
+    this.serviceContact.sendEmailService();
+  }
 }

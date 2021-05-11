@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, HostListener, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {RedirectGuard} from '../../service/redirectGuard.service';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -16,5 +17,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isCollapsed = true;
   }
+
+  public isActiveLink(link: string): boolean {
+    return this.router.isActive(link, true);
+  }
+
+
 
 }

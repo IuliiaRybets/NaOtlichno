@@ -4,8 +4,9 @@ import { RedirectGuard } from './service/redirectGuard.service';
 import { HeaderComponent } from './shared/header/header.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {

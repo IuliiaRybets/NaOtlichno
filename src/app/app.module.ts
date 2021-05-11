@@ -10,11 +10,14 @@ import { ContactModule } from './contact/contact.module';
 import { PayModule } from './pay/pay.module';
 import { PriceModule } from './price/price.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TelegramComponent } from './shared/telegram/telegram.component';
+import { NetworksComponent } from './shared/networks/networks.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     FormsModule,
@@ -26,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutModule,
     ContactModule,
     PriceModule,
-    PayModule
+    PayModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

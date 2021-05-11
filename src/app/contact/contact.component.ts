@@ -45,8 +45,8 @@ export class ContactComponent implements OnInit {
       message: ['']
      });
     this.orderForm.valueChanges.pipe(
-      switchMap(form => contactService.assignValueToControl(form))
-    )
+     // switchMap(form => this.contactService.assignValueToControl(form))
+    );
   }
 
   changeSubject(sub: any): void {

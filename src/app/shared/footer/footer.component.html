@@ -6,7 +6,7 @@
             <div class="col-md-3 col-xs-12">
                 <h6>Office</h6>
                 <p class="py-2 small-text">
-                    <a href="naotlichno.com.ua@gmail.com?subject=Mail from Our Site">
+                    <a class="btn-link" (click)="sendEmail()" role="button">
                         naotlichno.com.ua@gmail.com
                     </a>
                 </p>
@@ -31,10 +31,10 @@
             </div>
             <div class="col-md-3 col-xs-12">
                 <h6>Socials</h6>
-                <a class="col" href="#">
+                <a class="col telegram" (click)="onTelegram($event)">
                     <img src="assets/telegram-footer.png" class="social-icons" width="20" height="20">
                 </a>
-                <a class="col"href="https://www.instagram.com/naotlichno.com.ua/" (click)="router.navigateByUrl('/external?url=https://www.instagram.com/naotlichno.com.ua/');false">
+                <a class="col" href="https://www.instagram.com/naotlichno.com.ua/" (click)="router.navigateByUrl('/external?url=https://www.instagram.com/naotlichno.com.ua/');false">
                     <img src="assets/instagram-footer.png" class="social-icons" width="20" height="20">
                 </a>
                 <a class="col" href="#">
