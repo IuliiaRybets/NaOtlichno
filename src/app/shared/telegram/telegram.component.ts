@@ -21,7 +21,8 @@ export class TelegramComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   constructor(private readonly _telegramService: TelegramService,
-              private readonly _formBuilder: FormBuilder) {
+              private readonly _formBuilder: FormBuilder,
+              public readonly service: ContactService) {
     this.form = this._formBuilder.group({
       message: ['']
     });
@@ -46,6 +47,11 @@ export class TelegramComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
+  public closeTelegramm(event: Event): void {
+    event.cancelBubble = true;
+
+    this.service.hideChat();
+  }
   //@ViewChild('script', {static: true}) script: ElementRef;
 
   // tslint:disable-next-line:typedef

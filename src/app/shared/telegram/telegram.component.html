@@ -1,13 +1,15 @@
 <div class="position-fixed chat-fixed" >
 <div class="chat-container">
   <div class="chat-header">
-    <div class="p-3 row ">
-      <div class="col-2">
+    <div class="p-1">
+      <div class="avatar">
         <img width="30" height="30" src="assets/avatar.png">
       </div>
-      <div class="col-10">
-        <div >Admin</div>
-        <div class="small-text" *ngIf="connected | async">Online</div>
+      <div class="admin">
+        <div >Admin
+          <div class="small-text" *ngIf="connected | async">Online</div>
+        </div>
+        <button class="btn" (click)="closeTelegramm($event)"><img width="10" height="10" src="assets/cancel.png"></button>
       </div>
     </div>
   </div>
@@ -18,7 +20,7 @@
         class="msg"
         *ngFor="let message of (messages | async)"
         [ngClass]="{messageReceived: !message.fromUser, messageSent: message.fromUser}">
-          <div class="flex-row row align-items-center">
+          <div class="flex-row align-items-center">
             <!--<img class="mx-2" width="10" height="10" src="assets/avatar.png">-->
             <div class="small-text">{{ message.fromUser ? 'you' : 'Admin' }}</div>
           </div>
@@ -37,7 +39,7 @@
           <div class="col-10">
             <input type="text" class="form-control" placeholder="Type your message..." formControlName="message" />
           </div>
-          <div class="col-2">
+          <div class="col-2 submitbtn align-items-center">
             <button type="submit" class="btn">
               <img width="20px" height="20px" src="assets/telegram-footer.png">
             </button>

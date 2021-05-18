@@ -22,7 +22,7 @@ export class TelegramService {
     private _initialized: boolean;
     private _sessionKey: string | null;
     private _connected: BehaviorSubject<boolean>;
-    private _messages: BehaviorSubject<Array<TelegramMessage>>;;
+    private _messages: BehaviorSubject<Array<TelegramMessage>>;
 
 
     constructor ( private readonly _httpClient: HttpClient ) {

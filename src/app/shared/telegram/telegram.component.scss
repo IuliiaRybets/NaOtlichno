@@ -1,6 +1,25 @@
 @import '../../../styles/colors';
 @import '../../../styles/breakpoints';
 
+
+.avatar {
+  position: absolute;
+  background: $el-ui-grey-1;
+  padding: 7px;
+  border-radius: 40px;
+  left: 10px;
+  top: -14px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $el-black;
+}
+
+.admin {
+  display: flex;
+  margin-left: 60px;
+  justify-content: space-between;
+}
+
 .chat-fixed {
   right: 10%;
   bottom: 0;
@@ -26,7 +45,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0px 16px 55px;
+  padding: 0px 15px 0px;
   min-height: 100%;
   height: 120px;
   overflow-y: scroll;
@@ -38,11 +57,17 @@
   min-width: 100px;
   max-width: 70%;
   height: auto;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin: 20px 0;
-  background: #FFF;
-  border-radius: 7px;
+  background: $el-white;
+  border-radius: 15px;
   clear: both;
+}
+
+.submitbtn {
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .messageReceived {

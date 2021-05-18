@@ -56,6 +56,8 @@ export class ContactComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onSubmit() {
-    console.warn(this.orderForm);
+    this.contactService.sendFormValue(this.orderForm.getRawValue()).subscribe(
+      data => data
+    );
   }
 }
