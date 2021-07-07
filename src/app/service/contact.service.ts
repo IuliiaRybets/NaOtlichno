@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
 
 export class ContactService {
 
+  private storageForm: any = {};
   _url = 'http://localhost:8080/contact';
   /*  email = `yuliyarybets@gmail.com`;
    email = `naotlichno.com.ua@gmail.com`;
@@ -26,8 +27,26 @@ export class ContactService {
     if (validOnly && formControl.invalid) {
       formControl.setValue(oldValue);
     }*/
-
+   
+    
     return this._httpClient.post<any>(this._url, formGroup);
+  }
+
+  setFormValue(formGroup: FormGroup) {
+    localStorage.setItem(this.storageForm, JSON.stringify(formGroup));
+  }
+
+  getFormValue() {
+    let data = localStorage.getItem(this.storageForm);
+    return JSON.parse(data);
+  }
+
+  clearFormValue() {
+    localStorage.removeItem(this.storageForm);
+  }
+
+  cleanAll() {
+    localStorage.clear()
   }
 
   public hideChat(): void {

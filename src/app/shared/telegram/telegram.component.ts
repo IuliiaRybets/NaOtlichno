@@ -28,6 +28,7 @@ export class TelegramComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.connected = this._telegramService.isConnected();
     this.messages = this._telegramService.getMessages();
+    
   }
 
   ngOnInit(): void {

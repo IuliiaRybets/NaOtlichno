@@ -4,12 +4,14 @@ import { ErrorText } from '../shared/error';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { SUBJECTNAME } from '../shared/data.model';
 import { ContactService } from '../service/contact.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  showSendMsg: boolean = false;
 
   error = ErrorText;
   text = TextProject;
@@ -29,7 +31,8 @@ export class ContactComponent implements OnInit {
   constructor(private readonly fb: FormBuilder, private readonly contactService: ContactService) {
     this.subjectName = SUBJECTNAME;
     this.subjectName.sort();
-     }
+
+  }
 
   ngOnInit(): void {
     this.orderForm = this.fb.group({
@@ -44,20 +47,28 @@ export class ContactComponent implements OnInit {
       deadline: ['', Validators.required],
       message: ['']
      });
-    this.orderForm.valueChanges.pipe(
+
+    this.orderForm.valueChanges.forEach(
+      (value: FormGroup) => this.contactService.setFormValue(value)
      // switchMap(form => this.contactService.assignValueToControl(form))
     );
+    this.orderForm.patchValue(this.contactService.getFormValue());
+   
   }
 
   changeSubject(sub: any): void {
     this.subjectName = this.subjectName.find(val => val.name === sub);
-    console.log(sub);
+    console.log("changeSubject", sub);
   }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
     this.contactService.sendFormValue(this.orderForm.getRawValue()).subscribe(
-      data => data
+      (data) => {
+        data;
+        this.showSendMsg = true;  
+        this.contactService.clearFormValue();
+      } 
     );
   }
 }

@@ -39,7 +39,7 @@ export class TelegramService {
         if ( ! this._initialized )
         {
             const resp = await this._httpClient.get(this.BASE_HREF + '/v1/info', {withCredentials: true}).toPromise();
-            console.log(resp);
+            console.log('resp', resp);
 
             this._sessionKey = (resp as any).session;
             this._initialized = true;
