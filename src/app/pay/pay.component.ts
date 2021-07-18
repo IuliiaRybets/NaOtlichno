@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContactService } from '../service/contact.service';
 
 @Component({
   selector: 'app-pay',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router, private readonly serviceContact: ContactService) { }
 
   ngOnInit(): void {
+  }
+
+  sendEmail(): void {
+    this.serviceContact.sendEmailService();
+  }
+
+  onTelegram(evt: Event): void {
+    evt.cancelBubble = true;
+    this.serviceContact.toggleChat();
+  }
+
+  contactClick(): void {
+    this.router.navigateByUrl('/contact');
   }
 
 }

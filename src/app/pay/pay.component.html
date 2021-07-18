@@ -12,7 +12,7 @@
 <div class="row my-4 py-4">
     <div class="col-sm-6 col-xs-12">
         <div class="text-center">
-            <img width="50" height="auto" src="../../assets/shopping.png">
+            <img width="50" height="auto" src="assets/shopping.png">
         <h5 class="py-4">Весь процесс от заказа работы до получения</h5>
 
         </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="col-sm-6 col-xs-12">
         <div class="text-center">
-            <img width="50" height="auto" src="../../assets/choices.png">
+            <img width="50" height="auto" src="assets/choices.png">
             <h5 class="py-4">Заказать работу вы можете любым комфортным способом для вас</h5>
 
         </div>
@@ -46,16 +46,24 @@
                 Заполнить форму “Заказать работу”
             </li>
             <li>
-                Написать нам на почту naotlichno.com.ua@gmail.com
+                Написать нам на почту  
+                <a class="cursor" (click)="sendEmail()" role="button">
+                    naotlichno.com.ua@gmail.com
+                </a>
             </li>
             <li>
-                Позвонить по номеру +380977162157
+                Позвонить по номеру <a class="cursor" href="tel:+380977162157">+38 097 7162157</a>
             </li>
             <li>
-                Написать нам в мессенджеры  +380977162157 Viber, Telegram, WhatsApp
+                Написать нам в мессенджеры  +38 097 7162157 Viber или воспользоваться сервисом 
+                <a class="cursor" (click)="onTelegram($event)">
+                    Telegram
+                </a>
+                 на сайте
             </li>
             <li>
-                Отправить сообщение в директ @naotlichno.com.ua
+                Отправить сообщение заполнив  
+                <a class="cursor" (click)="contactClick()">форму на сайте</a>
             </li>
         </ul>
     </div>

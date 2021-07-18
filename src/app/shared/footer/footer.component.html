@@ -1,7 +1,7 @@
 <footer class="bg-dark">
     <div class="container">
         <div class="row footer text-center py-4">
-            <div class="col-md-3 col-xs-12"><a class="navbar-brand pb-4" [routerLink]="['']"><img src="../../../assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
+            <div class="col-md-3 col-xs-12"><a class="navbar-brand pb-4" [routerLink]="['']"><img src="assets/img/naotlichnoLogo.png" width="50" height="auto" alt="Na otlichno" ></a>
             </div>
             <div class="col-md-3 col-xs-12">
                 <h6>Office</h6>
@@ -45,9 +45,19 @@
         </div>
     </div>
     <div class="container">
-        <small class="footer text-center">
-            Все права защищены
-            {{ nowFormatted }}
-        </small>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <small class="footer">
+                    Все права защищены
+                    {{ nowFormatted }}
+                </small>
+            </div>    
+            <div class="col-md-6 col-xs-12 text-md-right">
+                <small class="footer ">
+                    Сайт сделан на закакз Iuliia Rybets
+                    <img src="assets/rybets.png" class="social-icons" width="70" height="20">
+                </small>
+            </div>
+        </div>
     </div>
 </footer>

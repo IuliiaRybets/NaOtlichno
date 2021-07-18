@@ -2,6 +2,7 @@ import * as Moment from 'moment';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 export interface TelegramMessage
@@ -17,7 +18,6 @@ export interface TelegramMessage
     providedIn: 'root'
 })
 export class TelegramService {
-    private readonly BASE_HREF = 'http://localhost:8080';
     private _ws: WebSocket | null;
     private _initialized: boolean;
     private _sessionKey: string | null;
@@ -38,7 +38,7 @@ export class TelegramService {
     {
         if ( ! this._initialized )
         {
-            const resp = await this._httpClient.get(this.BASE_HREF + '/v1/info', {withCredentials: true}).toPromise();
+            const resp = await this._httpClient.get(`${environment.api_base}/v1/info`, {withCredentials: true}).toPromise();
             console.log('resp', resp);
 
             this._sessionKey = (resp as any).session;
@@ -60,7 +60,7 @@ export class TelegramService {
             this._ws = null;
         }
 
-        this._ws = new WebSocket(this.BASE_HREF.replace(/^http/i, 'ws') + `/v1/message/ws?session=${encodeURIComponent(this._sessionKey)}`);
+        this._ws = new WebSocket(environment.api_base.replace(/^http/i, 'ws') + `/v1/message/ws?session=${encodeURIComponent(this._sessionKey)}`);
 
         this._ws.onclose = ( evt ) =>
         {
@@ -71,8 +71,6 @@ export class TelegramService {
 
         this._ws.onmessage = ( evt ) =>
         {
-            console.log('TODO: Message: ', evt);
-
             const msg = JSON.parse(evt.data);
             switch ( msg.action )
             {

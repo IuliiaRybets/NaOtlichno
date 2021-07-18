@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,10 +11,6 @@ import {HttpClient} from '@angular/common/http';
 export class ContactService {
 
   private storageForm: any = {};
-  _url = 'http://localhost:8080/contact';
-  /*  email = `yuliyarybets@gmail.com`;
-   email = `naotlichno.com.ua@gmail.com`;
-   subject = `Уважаемая команда`;*/
 
   constructor ( private readonly _httpClient: HttpClient ) {}
 
@@ -29,7 +26,7 @@ export class ContactService {
     }*/
    
     
-    return this._httpClient.post<any>(this._url, formGroup);
+    return this._httpClient.post<any>(`${environment.api_base}/contact`, formGroup);
   }
 
   setFormValue(formGroup: FormGroup) {
@@ -58,7 +55,7 @@ export class ContactService {
   }
 
   sendEmailService(): void {
-
+    window.location.href = "mailto:naotlichno.com.ua@gmail.com?subject=Работа%20на%20заказ";
   }
 
 }

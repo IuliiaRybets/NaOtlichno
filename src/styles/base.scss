@@ -96,6 +96,11 @@
 
 }
 
+.cursor {
+  text-decoration: underline;
+  cursor: pointer;
+  color: $el-antrazit;
+}
 
 @media screen and (max-width: $breakpoint-large) {
 

@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/base';
 
 .banner {
    background-image: url('../../assets/img/pay.png'), linear-gradient(332deg, $el-antrazit 17%, #343a40 100%);
@@ -9,3 +10,4 @@
     color: $el-ui-grey-1;
     height: 60vh;
 }
+

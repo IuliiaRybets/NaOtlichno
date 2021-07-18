@@ -42,9 +42,8 @@ import {ClickOutsideDirective} from '../directives/click-outside.directive';
         NetworksComponent,
         ClickOutsideDirective
     ],
-  providers: [RedirectGuard,
-    ContactService
-  ],
+  providers: [RedirectGuard
+  ]
 })
 
 export class SharedModule {}
