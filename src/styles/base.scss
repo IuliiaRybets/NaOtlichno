@@ -102,6 +102,10 @@
   color: $el-antrazit;
 }
 
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
 @media screen and (max-width: $breakpoint-large) {
 
   h1 {
